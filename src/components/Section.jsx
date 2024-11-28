@@ -194,7 +194,7 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
           {/* Renderiza el componente Card para mostrar los términos y condiciones */}
           <Card /> 
           {/* Renderiza el componente Checkbox para permitir la aceptación de los términos */}
-          <Checkbox /> 
+          <Checkbox />  
         </motion.div>
       )}
     </AnimatePresence>
