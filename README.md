@@ -1,4 +1,6 @@
 # Ciber Paz - Portal Cautivo
+# Link del pmv desplegado
+http://portal-cautivo-tiktok.s3-website.us-east-2.amazonaws.com/
 
 ## Descripción del Proyecto
 El proyecto es un portal cautivo diseñado para redes Wi-Fi públicas en Colombia, que combina conectividad gratuita con una experiencia educativa interactiva. Su objetivo principal es sensibilizar a los usuarios sobre la sostenibilidad tecnológica, los derechos digitales y la seguridad en línea, alineándose con los valores de Ciber Paz. Al conectarse a la red, los usuarios son redirigidos a un recorrido que incluye contenido visualmente atractivo, videos educativos y enlaces a recursos oficiales, promoviendo un uso responsable y consciente de la tecnología mientras se fomenta la inclusión digital.
