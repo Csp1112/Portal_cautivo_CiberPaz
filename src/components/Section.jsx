@@ -25,8 +25,12 @@ import Social from './Social';
 // Importa Animal, que muestra un componente animado relacionado con la narrativa del proyecto.
 import Animal from './Animal';
 
+import TikTokVideoPlayer from './TiktokVideoPlayer';
+
 // Define el componente Section. Este representa una página o sección en el portal y contiene elementos como el título, contenido, botones, y el footer.
 function Section({ title, content, onNext, onPrev, footerImage, totalSections, sectionIndex }) {
+  
+  
   return (
   <div
       // Define el elemento principal de la sección como el contenido principal de la página para propósitos de accesibilidad.
@@ -106,8 +110,8 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
         id="section-title"  // Define un identificador único para relacionar este título con accesibilidad.
         className='titillium-web-bold'  // Aplica una clase CSS para estilos tipográficos específicos.
         style={{ 
-          fontSize: '7vh',  // Define el tamaño del texto basado en el alto de la ventana para mayor adaptabilidad.
-          padding: '2px 10px',  // Agrega relleno interno para separar el texto de los bordes del fondo.
+          fontSize: '2vw',  // Define el tamaño del texto basado en el alto de la ventana para mayor adaptabilidad.
+          padding: '0px 10px',  // Agrega relleno interno para separar el texto de los bordes del fondo.
           backgroundColor: 'rgba(169, 202, 181, 0.8)',  // Establece un fondo semitransparente para destacar el texto.
           borderRadius: '20px',  // Aplica esquinas redondeadas al fondo del título.
           display: 'inline-block'  // Asegura que el título tenga un tamaño basado en su contenido.
@@ -120,7 +124,7 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
         id="section-description"  // Define un identificador único para asociar este párrafo con accesibilidad.
         className='titillium-web-semibold'  // Aplica una clase CSS para estilos tipográficos específicos.
         style={{ 
-          fontSize: '4vh',  // Define un tamaño de fuente menor que el título, adaptativo al alto de la ventana.
+          fontSize: '1.5vw',  // Define un tamaño de fuente menor que el título, adaptativo al alto de la ventana.
           padding: '2px 10px',  // Añade relleno interno para espaciar el texto de los bordes.
           backgroundColor: 'rgba(169, 202, 181, 0.8)',  // Fondo semitransparente para resaltar el contenido.
           borderRadius: '20px',  // Esquinas redondeadas que combinan con el estilo del título.
@@ -167,6 +171,25 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
       </motion.div>
     )}
 
+    {/* TikTokVideoPlayer: Aparece solo en la segunda sección */}
+    {sectionIndex === 1 && (
+      <div
+        style={{
+          paddingBottom: '60px', // Espacio para evitar que el footer lo cubra
+          zIndex: 2, // Coloca el contenedor del video por encima del footer
+        }}
+      >
+        <TikTokVideoPlayer
+          style={{
+            maxWidth: '200px', // Limita el ancho máximo del video
+            width: '90%', // Hace que el video sea responsivo
+            height: 'auto', // Ajusta la altura automáticamente
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Opcional: Añade un poco de sombra para resaltar el video
+          }}
+        />
+      </div>
+    )}
+
     {/* Card y Checkbox con animación, solo en la primera sección */}
     <AnimatePresence> 
       {/* Comprueba si es la primera sección antes de renderizar Card y Checkbox */}
@@ -183,7 +206,6 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
             flexDirection: 'column', // Coloca los elementos (Card y Checkbox) en una columna.
             alignItems: 'center', // Centra los elementos horizontalmente.
             gap: '20px', // Espaciado entre los elementos.
-            marginBottom: '20px', // Margen inferior para separar del siguiente contenido.
           }}
         >
           {/* Renderiza el componente Card para mostrar los términos y condiciones */}
@@ -203,7 +225,7 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
         display: 'flex', // Utiliza diseño flexible para alinear los elementos internos.
         justifyContent: 'center', // Centra el componente `Social` horizontalmente.
         width: '100%', // Asegura que el contenedor abarque el ancho completo de la pantalla.
-        zIndex: 2, // Coloca este contenedor por encima de elementos con un z-index menor.
+        zIndex: 3, // Coloca este contenedor por encima de elementos con un z-index menor.
       }}
     >
       {/* Renderiza el componente Social, que incluye los botones de redes sociales */}
@@ -220,7 +242,7 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
         display: 'flex', // Habilita un diseño flexible para manejar el alineamiento de los botones.
         justifyContent: 'space-between', // Distribuye los botones "Siguiente" y "Anterior" en los extremos.
         padding: '0 5%', // Añade espacio desde los bordes laterales para mejorar la estética.
-        zIndex: 2, // Coloca este contenedor por encima de elementos con un índice de apilamiento menor.
+        zIndex: 3, // Coloca este contenedor por encima de elementos con un índice de apilamiento menor.
       }}
     >
       {/* Contenedor del botón "Siguiente", aparece solo si no es la última sección */}

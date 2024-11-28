@@ -4,9 +4,9 @@ import Section from './components/Section'; // Importa el componente Section que
 
 // Datos para las secciones
 const sectionsData = [
-  { title: '¡Hola!', content: 'Antes de empezar' }, // Primera sección con título y contenido
-  { title: 'Servicios', content: 'Aquí puedes encontrar los servicios que ofrecemos.' }, // Segunda sección
-  { title: 'Conéctate', content: 'Dale click' }, // Tercera sección
+  { title: 'Tu puerta a un internet responsable', content: 'Da el primer paso hacia un mundo digital más consciente y protegido' }, // Primera sección con título y contenido
+  { title: 'Pequeñas acciones, grandes cambios', content: 'Aprende y actúa por un mejor futuro digital con Ciber Paz' }, // Segunda sección
+  { title: 'Conéctate con Ciber Paz', content: 'Dale click para conectarte a la red y disfrutar de acceso gratuito a internet' }, // Tercera sección
 ];
 
 // Imágenes del footer asociadas a cada sección
