@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:15
+    container_name: tiktok_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: tiktok_videos
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
+      - ./bdTiktok_videos.sql:/docker-entrypoint-initdb.d/bdTiktok_videos.sql
+    networks:
+      - biblioteca_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  biblioteca_network:
+    driver: bridge
