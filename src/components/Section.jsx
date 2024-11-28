@@ -19,6 +19,9 @@ import Card from './CardTerms';
 // Importa Checkbox, que incluye una casilla para que el usuario acepte los términos y condiciones.
 import Checkbox from './CheckBox';
 
+// Importa el componente para visualizar los videos de tiktok procesados con ia desde el back
+import TikTokVideoPlayer from './tiktokvideoplayer';
+
 // Importa Social, un componente para mostrar botones de redes sociales.
 import Social from './Social';
 
@@ -88,7 +91,9 @@ function Section({ title, content, onNext, onPrev, footerImage, totalSections, s
         // Descripción accesible que informa la funcionalidad del enlace a los usuarios.
       />
     </div>
-
+      
+    {/* Contenido TikTokVideoPlayer */}
+    <TikTokVideoPlayer />
       
     {/* Contenido principal */}
     <div 
