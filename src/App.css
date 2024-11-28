@@ -1,120 +1,130 @@
 /* App.css */
 
-/* From Uiverse.io by mask_guy_0 */ 
+/* Animación para un botón interactivo basado en Uiverse.io */
+
+/* Estilo base para el botón animado */
 .animated-button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 16px 36px;
-  border: 4px solid;
-  border-color: transparent;
-  font-size: 16px;
-  background-color: inherit;
-  border-radius: 100px;
-  font-weight: 600;
-  color: white;
-  box-shadow: 0 0 0 2px white;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative; /* Permite posicionar elementos hijos de forma relativa */
+  display: flex; /* Utiliza flexbox para alinear contenido */
+  align-items: center; /* Centra verticalmente los elementos hijos */
+  gap: 4px; /* Espaciado entre elementos internos */
+  padding: 16px 36px; /* Espaciado interno del botón */
+  border: 4px solid; /* Ancho del borde */
+  border-color: transparent; /* Hace el borde invisible inicialmente */
+  font-size: 16px; /* Tamaño del texto */
+  background-color: inherit; /* Hereda el color de fondo del contenedor padre */
+  border-radius: 100px; /* Bordes redondeados */
+  font-weight: 600; /* Grosor del texto */
+  color: white; /* Color del texto */
+  box-shadow: 0 0 0 2px white; /* Sombra externa que actúa como borde visible */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  overflow: hidden; /* Oculta contenido que se salga del área del botón */
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Animación suave */
 }
 
+/* Estilo para los íconos SVG dentro del botón */
 .animated-button svg {
-  position: absolute;
-  width: 24px;
-  fill: white;
-  z-index: 9;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute; /* Los íconos se posicionan en relación al contenedor del botón */
+  width: 24px; /* Ancho del ícono */
+  fill: white; /* Color de relleno inicial del ícono */
+  z-index: 9; /* Asegura que los íconos estén por encima de otros elementos */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Animación suave */
 }
 
+/* Estilo para la flecha derecha (arr-1) */
 .animated-button .arr-1 {
-  right: 16px;
+  right: 16px; /* Posiciona la flecha en el lado derecho */
 }
 
+/* Estilo para la flecha izquierda (arr-2) */
 .animated-button .arr-2 {
-  left: -25%;
+  left: -25%; /* Inicialmente posicionada fuera del botón */
 }
 
+/* Estilo para el círculo animado en el centro del botón */
 .animated-button .circle {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  border-radius: 50%;
-  opacity: 0;
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: absolute; /* Se posiciona relativo al contenedor del botón */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta la posición exacta al centro */
+  width: 20px; /* Tamaño inicial del círculo */
+  height: 20px; /* Tamaño inicial del círculo */
+  background-color: white; /* Color del círculo */
+  border-radius: 50%; /* Forma circular */
+  opacity: 0; /* Oculto inicialmente */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Animación suave */
 }
 
+/* Estilo para el texto dentro del botón */
 .animated-button .text {
-  position: relative;
-  z-index: 1;
-  transform: translateX(-12px);
-  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative; /* Permite desplazar el texto con `transform` */
+  z-index: 1; /* Coloca el texto sobre otros elementos */
+  transform: translateX(-12px); /* Mueve ligeramente el texto hacia la izquierda */
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1); /* Animación suave */
 }
 
+/* Estilo al pasar el cursor sobre el botón */
 .animated-button:hover {
-  box-shadow: 0 0 0 12px transparent;
-  color: black;
-  border-radius: 12px;
+  box-shadow: 0 0 0 12px transparent; /* Cambia el tamaño de la sombra */
+  color: black; /* Cambia el color del texto */
+  border-radius: 12px; /* Reduce el redondeo de los bordes */
 }
 
+/* Animación para la flecha derecha al pasar el cursor */
 .animated-button:hover .arr-1 {
-  right: -25%;
+  right: -25%; /* Mueve la flecha fuera del área visible */
 }
 
+/* Animación para la flecha izquierda al pasar el cursor */
 .animated-button:hover .arr-2 {
-  left: 16px;
+  left: 16px; /* Posiciona la flecha dentro del área visible */
 }
 
+/* Animación para el texto al pasar el cursor */
 .animated-button:hover .text {
-  transform: translateX(12px);
+  transform: translateX(12px); /* Mueve el texto hacia la derecha */
 }
 
+/* Cambia el color del ícono SVG al pasar el cursor */
 .animated-button:hover svg {
-  fill: #212121;
+  fill: #212121; /* Cambia el color de relleno a gris oscuro */
 }
 
+/* Estilo al presionar el botón */
 .animated-button:active {
-  scale: 0.95;
-  box-shadow: 0 0 0 4px white;
+  scale: 0.95; /* Reduce el tamaño ligeramente */
+  box-shadow: 0 0 0 4px white; /* Reduce la sombra */
 }
 
+/* Animación para el círculo al pasar el cursor */
 .animated-button:hover .circle {
-  width: 220px;
-  height: 220px;
-  opacity: 1;
+  width: 220px; /* Expande el círculo */
+  height: 220px; /* Expande el círculo */
+  opacity: 1; /* Hace visible el círculo */
 }
 
-
-
-/* Ajustes para pantallas de tabletas */
+/* Ajustes responsivos para pantallas de tabletas */
 @media (max-width: 768px) {
   .section {
-    font-size: 1rem;
-    padding: 15px;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    padding: 15px; /* Reduce el espacio interno */
   }
 
   button {
-    font-size: 0.9rem;
-    padding: 10px;
+    font-size: 0.9rem; /* Reduce el tamaño del texto en los botones */
+    padding: 10px; /* Reduce el espacio interno en los botones */
   }
 }
 
-/* Ajustes para pantallas de móviles */
+/* Ajustes responsivos para pantallas de móviles */
 @media (max-width: 480px) {
   .section {
-    font-size: 0.9rem;
-    padding: 10px;
+    font-size: 0.9rem; /* Reduce aún más el tamaño del texto */
+    padding: 10px; /* Reduce el espacio interno */
   }
 
   button {
-    font-size: 0.8rem;
-    padding: 8px;
+    font-size: 0.8rem; /* Ajusta el tamaño del texto en botones */
+    padding: 8px; /* Reduce el espacio interno en botones */
   }
 }
-
-

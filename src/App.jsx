@@ -1,13 +1,15 @@
 // App.jsx
-import { useState } from 'react';
-import Section from './components/Section';
+import { useState } from 'react'; // Importa el hook useState para manejar el estado del componente
+import Section from './components/Section'; // Importa el componente Section que renderiza cada sección
 
+// Datos para las secciones
 const sectionsData = [
-  { title: '¡Hola!', content: 'Antes de empezar' },
-  { title: 'Servicios', content: 'Aquí puedes encontrar los servicios que ofrecemos.' },
-  { title: 'Conéctate', content: 'Dale click' },
+  { title: '¡Hola!', content: 'Antes de empezar' }, // Primera sección con título y contenido
+  { title: 'Servicios', content: 'Aquí puedes encontrar los servicios que ofrecemos.' }, // Segunda sección
+  { title: 'Conéctate', content: 'Dale click' }, // Tercera sección
 ];
 
+// Imágenes del footer asociadas a cada sección
 const images = {
   0: 'footer-4.svg',    // Imagen para la primera sección
   1: 'footer-5.svg',    // Imagen para la segunda sección
@@ -15,32 +17,48 @@ const images = {
 };
 
 function App() {
-  const [currentSection, setCurrentSection] = useState(0);
+  const [currentSection, setCurrentSection] = useState(0); // Estado para rastrear la sección actual
   const totalSections = sectionsData.length; // Total de secciones
 
-
+  // Función para avanzar a la siguiente sección
   const nextSection = () => {
-    if (currentSection < totalSections  - 1) {
-      setCurrentSection(currentSection + 1);
+    if (currentSection < totalSections - 1) { // Comprueba si no es la última sección
+      setCurrentSection(currentSection + 1); // Actualiza a la siguiente sección
     }
   };
 
+  // Función para retroceder a la sección anterior
   const prevSection = () => {
-    if (currentSection > 0) {
-      setCurrentSection(currentSection - 1);
+    if (currentSection > 0) { // Comprueba si no es la primera sección
+      setCurrentSection(currentSection - 1); // Actualiza a la sección anterior
     }
   };
 
   return (
     <Section
+      // Pasa el título de la sección actual
       title={sectionsData[currentSection].title}
+
+      // Pasa el contenido de la sección actual
       content={sectionsData[currentSection].content}
+
+      // Función para manejar el avance a la siguiente sección
       onNext={nextSection}
+
+      // Función para manejar el retroceso a la sección anterior
       onPrev={prevSection}
-      footerImage={images[currentSection]}  // Pasa la imagen correspondiente al Footer
-      // isFirstSection={currentSection === 0}  // Indica si es la primera sección
-      sectionIndex={currentSection}       // Pasa el índice de la sección actual
-      totalSections={totalSections}       // Pasa el número total de secciones
+
+      // Imagen del footer correspondiente a la sección actual
+      footerImage={images[currentSection]}
+
+      // Índice de la sección actual, comenzando en 0
+      sectionIndex={currentSection}
+
+      // Total de secciones disponibles
+      totalSections={totalSections}
+
+      // Descripción accesible de la sección actual
+      aria-label={`Sección ${currentSection + 1} de ${totalSections}`}
     />
   );
 }
